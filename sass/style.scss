@@ -1,0 +1,138 @@
+// Primary Colors
+$bright-red:  hsl(12, 88%, 59%);
+$dark-blue: hsl(228, 39%, 23%);
+//Neutral Colors
+$dark-grayish-blue: hsl(227, 12%, 61%);
+$very-dark-blue: hsl(233, 12%, 13%);
+$very-pale-red: hsl(13, 100%, 96%);
+$very-light-gray: hsl(0, 0%, 98%);
+
+$primary-font: 'Be Vietnam', sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-boxing;
+  font-family: $primary-font;
+}
+
+@mixin flexbox {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+body
+{
+    overflow-x: hidden;
+    font-size: 16px;
+}
+.mobile-nav {
+  max-width: 100vw;
+  height: 10vh;
+  @include flexbox();
+  justify-content: space-between;
+  padding: 0 25px;
+  .logo
+  {
+    // background: red;
+      padding-top: 15px;
+    img{
+        height: 25px;
+    }
+  }
+  .burger {
+    div {
+      margin-top: 5px;
+      height: 4px;
+      width: 35px;
+      background: black;
+      transition: all .5s ease-in;
+    }
+  }
+  .burger-open {
+
+    .line-1
+    {
+        transform: rotate(-45deg) translate(-7px,6px);
+    }
+    .line-2
+    {
+        opacity: 0;
+
+    }
+    .line-3
+    {
+        transform: rotate(45deg) translate(-5px,-6px);
+    }
+  }
+}
+.mobile-nav ul {
+  @include flexbox();
+  flex-direction: column;
+  list-style-type: none;
+//   display: none;
+  position: absolute;
+  top: 10vh;
+  left: 10vw;
+  width: 80vw;
+  height: 50vh;
+  background: white;
+  z-index: 10;
+  transform: translateX(100vw);
+  transition: transform .5s ease-in;
+  li a
+  {
+      text-decoration: none;
+      color: $very-dark-blue;
+      font-weight: 700;
+      font-size: 25px;
+  }
+}
+.mobile-nav .menu-open {
+    
+    transform: translateX(0);
+    
+}
+.page-wrapper
+{
+   .illustration
+   {
+      
+       width: 100%;
+       margin: 0 auto;
+       text-align: center;
+   }
+   .content-1
+   {
+       text-align: center;
+       padding: 15px 50px;
+       h1
+       {
+        font-size: 3.5rem;
+        color: $very-dark-blue;
+       }
+       p{
+           font-size: 1.5rem;
+           color: $dark-grayish-blue;
+       }
+       .get-started
+       {
+           outline: none;
+           border: none;
+           background: $bright-red;
+           border-radius: 15%;
+           color: white;
+           padding: 5px 20px;
+           margin-top: 25px;
+           height: 50px;
+
+       }
+   }
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: rgb(62, 82, 163);
+}
